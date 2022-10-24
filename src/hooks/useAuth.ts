@@ -37,6 +37,10 @@ const useAuth: UseAuth = () => {
       setUser({ ...user, isAuthed: true, username: userName });
       return Promise.resolve(true);
     } else {
+      notification.error({
+        message: 'Error',
+        description: 'Usuario o contraseña incorrectos',
+      });
       return Promise.resolve(false);
     }
   };

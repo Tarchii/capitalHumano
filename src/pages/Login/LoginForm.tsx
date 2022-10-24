@@ -27,9 +27,9 @@ const LoginForm = () => {
     setIsLoading(true);
     try {
       login(form.userName, form.password);
-      setIsLoading(false);
+      console.log('11111111');
     } catch (error) {
-      setIsLoading(false);
+      console.log('2222222');
       notification.error({
         message: 'Error',
         description: 'Usuario o contraseña incorrectos',

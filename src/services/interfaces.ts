@@ -1,7 +1,6 @@
 export interface ILoginRequest {
   userName: string;
   password: string;
-  company: string;
 }
 
 export interface ILoginResponse {
