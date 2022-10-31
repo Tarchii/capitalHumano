@@ -15,7 +15,6 @@ const LoginForm = () => {
   const [emailModal, setEmailModal] = useState(false);
   const [openForgotPassword, setOpenForgotPassword] = useState(false);
 
-
   const { login } = useAuth();
 
   interface IOnFinish {
@@ -27,9 +26,7 @@ const LoginForm = () => {
     setIsLoading(true);
     try {
       login(form.userName, form.password);
-      console.log('11111111');
     } catch (error) {
-      console.log('2222222');
       notification.error({
         message: 'Error',
         description: 'Usuario o contraseña incorrectos',
@@ -37,22 +34,23 @@ const LoginForm = () => {
     } finally {
       setIsLoading(false);
     }
-  }
-
-
-  const handleOnForgotPassword = async (values: IOnForgotPassword) => {
   };
+
+  const handleOnForgotPassword = async (values: IOnForgotPassword) => {};
 
   return (
     <>
       <LoginCard>
         <LogoContainer>
-          <img src={'https://cdn.onlinewebfonts.com/svg/img_215664.png'} alt="Logo" />
+          <img
+            src={'https://cdn.onlinewebfonts.com/svg/img_215664.png'}
+            alt='Logo'
+          />
         </LogoContainer>
         <Title>Gestión de Capital Humano</Title>
         <Form
-          name="normal_login"
-          className="login-form"
+          name='normal_login'
+          className='login-form'
           initialValues={{
             remember: true,
           }}
@@ -64,7 +62,7 @@ const LoginForm = () => {
           }}
         >
           <Form.Item
-            name="userName"
+            name='userName'
             rules={[
               {
                 required: true,
@@ -74,12 +72,12 @@ const LoginForm = () => {
             normalize={(value) => value?.toString().toUpperCase()}
           >
             <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Usuario"
+              prefix={<UserOutlined className='site-form-item-icon' />}
+              placeholder='Usuario'
             />
           </Form.Item>
           <Form.Item
-            name="password"
+            name='password'
             rules={[
               {
                 required: true,
@@ -88,15 +86,15 @@ const LoginForm = () => {
             ]}
           >
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Contraseña"
+              prefix={<LockOutlined className='site-form-item-icon' />}
+              type='password'
+              placeholder='Contraseña'
             />
           </Form.Item>
           <Form.Item>
             <Button
-              htmlType="submit"
-              className="login-form-button"
+              htmlType='submit'
+              className='login-form-button'
               loading={isLoading}
               style={{ width: '100%' }}
             >
@@ -120,15 +118,15 @@ const LoginForm = () => {
           Ingresa tus datos para restaurar la contraseña e ingresar al sistema.
         </ModalTitle>
         <Form
-          name="normal_login"
-          className="login-form"
+          name='normal_login'
+          className='login-form'
           initialValues={{
             remember: true,
           }}
           onFinish={handleOnForgotPassword}
         >
           <Form.Item
-            name="UserName"
+            name='UserName'
             rules={[
               {
                 required: true,
@@ -137,11 +135,11 @@ const LoginForm = () => {
             ]}
             normalize={(value) => value?.toString().toUpperCase()}
           >
-            <Input prefix={<UserOutlined />} placeholder="Usuario" />
+            <Input prefix={<UserOutlined />} placeholder='Usuario' />
           </Form.Item>
           <Form.Item>
             <Button
-              htmlType="submit"
+              htmlType='submit'
               loading={isLoading}
               style={{ width: '100%' }}
             >
@@ -150,7 +148,8 @@ const LoginForm = () => {
           </Form.Item>
         </Form>
       </CustomModal>
-      <CustomModal destroyOnClose
+      <CustomModal
+        destroyOnClose
         centered
         visible={emailModal}
         onCancel={() => setEmailModal(false)}
@@ -225,14 +224,14 @@ const PasswordRecovery = styled.div`
 `;
 
 const ModalText = styled.p`
-font-size: 16px;
-text-align: center;
+  font-size: 16px;
+  text-align: center;
 `;
 
 const Title = styled.h1`
-display: flex;
-justify-content: center;
-margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
 `;
 
 export default LoginForm;
