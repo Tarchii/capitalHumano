@@ -2,7 +2,7 @@ import { notification } from 'antd';
 import { NotificationApi } from 'antd/lib/notification';
 import React from 'react';
 import ApplicationContext, { AppData } from '../context/ApplicationContext';
-import services from '../services';
+// import services from '../services';
 
 type UseAuth = () => {
   user: AppData;

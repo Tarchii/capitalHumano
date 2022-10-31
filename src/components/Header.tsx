@@ -27,6 +27,7 @@ const Header: React.FC = () => {
       <p
         style={{
           fontWeight: 'bolder',
+          marginTop: 10,
         }}
       >
         Software de Gestión de Capital Humano
@@ -49,8 +50,8 @@ const HeaderContainer = styled.div`
   align-items: center;
   background-color: #e3e3e3;
   width: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 
 const User = styled.div`

@@ -1,14 +1,10 @@
 import styled from 'styled-components';
-import { Button, Form, Input, notification } from 'antd';
+import { Button, Form, Input, Modal, notification } from 'antd';
 import { UserOutlined, LockOutlined, TeamOutlined } from '@ant-design/icons';
 import { theme } from '../../utils/constants';
 import { useState } from 'react';
-import CustomButton from '../../components/CustomButton';
-import CustomInput from '../../components/CustomInput';
-import CustomModal from '../../components/CustomModal';
 import useAuth from '../../hooks/useAuth';
-import { IOnForgotPassword } from '../../services/interfaces';
-import services from '../../services';
+import CustomModal from '../../components/CustomModal';
 
 const LoginForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -36,7 +32,7 @@ const LoginForm = () => {
     }
   };
 
-  const handleOnForgotPassword = async (values: IOnForgotPassword) => {};
+  // const handleOnForgotPassword = async (values: IOnForgotPassword) => { };
 
   return (
     <>
@@ -123,7 +119,7 @@ const LoginForm = () => {
           initialValues={{
             remember: true,
           }}
-          onFinish={handleOnForgotPassword}
+        // onFinish={handleOnForgotPassword}
         >
           <Form.Item
             name='UserName'
